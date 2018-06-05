@@ -1,5 +1,5 @@
 /**
- ** Plugin structure (Self executing)
+ ** Plugin structure -----------------------------------------------------------------------------------------------------------
  */
 
 /**
@@ -255,3 +255,48 @@
  * ?not the global variables of the parent 
  * ?function even though it makes use of it. But because of closure the values are not destroyed and the function holds onto it.
  */
+
+
+/**
+ * * Hoisting ------------------------------------------------------------------------------------------------------------------------------------
+ */
+
+
+/**
+ * ?Function Declaration Overrides Variable Declaration When Hoisted
+ *  ?Both function declaration and variable declarations are hoisted to the top of the containing scope. And function declaration takes precedence over variable 
+ *  ?declarations (but not over variable assignment). As is noted above, variable assignment is not hoisted, and neither is function assignment. As a reminder,  
+ *  ?this is a function assignment: var myFunction = function () {} Here is a basic example to demonstrate:
+ */
+
+
+//?Both the variable and the function are named myName
+
+// var myName;
+// function myName () {
+// console.log ("Rich");
+// }
+
+//?The function declaration overrides the variable name
+
+// console.log(typeof myName); //function
+
+
+//?But in this example, the variable assignment overrides the function declaration
+
+// var myName = "Richard"; //This is the variable assignment (initialization) that overrides the function declaration.
+
+// function myName() {
+//   console.log("Rich");
+// }
+
+// console.log(typeof myName); //String
+
+
+//?It is important to note that function expressions, such as the example below, are not hoisted.
+
+// var myName = function () {
+//   console.log("Rich");
+// }
+
+//?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
