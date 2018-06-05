@@ -7,9 +7,9 @@
  */
 
 // (function shouter() {
-//   var role = "Developer"; // Private Declarations
-//   this.publicrole = "Someeeee"; // Public access Variables
-//   this.shout = function () { // Public methods
+//   var role = "Developer"; //Private Declarations
+//   this.publicrole = "Someeeee"; //Public access Variables
+//   this.shout = function () { //Public methods
 //     alert("Hello !!!" + role);
 //   }
 //   return this;
@@ -21,9 +21,9 @@
 
 
 // function shouter() {
-//   var role = "Developer"; // Private Declarations
-//   this.publicrole = "Someeeee"; // Public access Variables
-//   this.shout = function () { // Public methods
+//   var role = "Developer"; //Private Declarations
+//   this.publicrole = "Someeeee"; //Public access Variables
+//   this.shout = function () { //Public methods
 //     alert("Hello !!!" + role);
 //   }
 //   return this;
@@ -69,9 +69,9 @@
 //    }
 
 //    let alex = person('alex');
-//    alex.greet(); // hello from alex
-//    console.log(alex.name); // undefined
-//    console.log(name); // will throw ReferenceError
+//    alex.greet(); //hello from alex
+//    console.log(alex.name); //undefined
+//    console.log(name); / will throw ReferenceError
 
 
 
@@ -131,8 +131,8 @@
 //            }, 0)
 //        }
 
-//        reduce itterates through the object , acc is accumilator or total , curr is current value. Basically we iterate through each
-//        Add price (curr.price) and stack it to acc.
+//reduce itterates through the object , acc is accumilator or total , curr is current value. Basically we iterate through each
+//Add price (curr.price) and stack it to acc.
 
 //        const addTaxToPrice = price => price + (price * 0.2)
 
@@ -155,9 +155,9 @@
 //    ]
 
 //    const order = Order(items)
-//    console.log(order.total) // undefined
-//    console.log(order.addTaxToPrice) // undefined
-//    console.log(order.calculateTotal()) // 27.58
+//    console.log(order.total) //undefined
+//    console.log(order.addTaxToPrice) //undefined
+//    console.log(order.calculateTotal()) //27.58
 
 
 /**
@@ -234,7 +234,7 @@
 
 // function sayHello2(name) {
 
-//   var text = 'Hello ' + name; // Local variable
+//   var text = 'Hello ' + name; //Local variable
 
 //   var say = function () {
 //     console.log(text);
@@ -246,7 +246,7 @@
 // var say2 = sayHello2('Bob');
 
 
-// say2(); // logs "Hello Bob"
+// say2(); //logs "Hello Bob"
 
 /**
  * ?Here say2 is assigned a referance of  the anonymos function of console.log . So saHello2('bob') passes the name , makes of it some use in text. But only return the anonomous 
