@@ -1,4 +1,183 @@
 /**
+ ** Data Types -----------------------------------------------------------------------------------------------------------
+ */
+
+//? In JS, there are six primitive data types:
+
+//?Boolean
+//?Number
+//?String
+//?Null
+//?Undefined
+//?Symbol
+
+//?----------Boolean
+/**
+ * ?Boolean
+ * ?A boolean represents only one of two values: true, or false. Think of a boolean as an on/off or a yes/no switch.
+ */
+// var boo1 = true;
+// var boo2 = false;
+
+//?----------Number
+/**
+ * ?There is only one type of Number in JavaScript. Numbers can be written with or without a decimal point. A number can also be +Infinity, -Infinity, and NaN (not a number).
+ */
+
+// var num1 = 32;
+// var num2 = +Infinity;
+
+
+//?----------String
+/**
+ * ?Strings are used for storing text. Strings must be inside of either double or single quotes. In JS, Strings are immutable (they cannot be changed).
+ */
+// var str1 = 'hello, it is me';
+// var str2 = "hello, it's me";
+
+
+//?----------Null
+/**
+ * ?Null has one value: null. It is explicitly nothing.
+ */
+
+// var nothing = null;
+
+//?----------Undefined
+/**
+ * ?A variable that has no value is undefined.
+ */
+
+// var testVar;
+// console.log(testVar); //undefined
+
+//?----------Symbol
+/**
+ * ?Symbols are new in ES6. A Symbol is an immutable primitive value that is unique. For the sake of brevity, 
+ * ?that is the extent that this article will cover Symbols.
+ */
+
+// const mySymbol = Symbol('mySymbol');
+
+
+/**
+ ** Objects -----------------------------------------------------------------------------------------------------------
+ */
+/**
+ * ?An object is an unordered list of primitive data types (and sometimes reference data types) that is stored as a series of name-value pairs.
+ * ?Each item in the list is called a property (functions are called methods).
+ */
+
+    // var myFirstObject = {firstName: "Richard", favoriteAuthor: "Conrad"};
+
+/**
+ * ?Think of an object as a list that contains items, and each item (a property or a method) in the list is stored by a name-value pair. 
+ * ?The property names in the example above are firstName and favoriteAuthor. And the values are “Richard” and “Conrad.”
+ * ?Property names can be a string or a number, but if the property name is a number, it has to be accessed with the bracket notation.0 
+ * ?More on bracket notation later. Here is another example of objects with numbers as the property name:*/
+
+    // var ageGroup = {30: "Children", 100:"Very Old"};
+    // console.log(ageGroup.30) //This will throw an error
+    //This is how you will access the value of the property 30, to get value "Children"
+    // console.log(ageGroup["30"]); //Children
+
+    //It is best to avoid using numbers as property names.
+
+
+ //?As a JavaScript developer you will most often use the object data type, mostly for storing data and for creating your own custom methods and functions.
+
+
+ /**
+ ** Reference Data Type and Primitive Data Types -----------------------------------------------------------------------------------------------------------
+ */
+
+ /**
+  * ?One of the main differences between reference data type and primitive data types is reference data type’s value is stored as a reference, 
+  * ?it is not stored directly on the variable, as a value, as the primitive data types are. For example:
+  */
+  
+//     The primitive data type String is stored as a value
+
+//     var person = "Kobe";  
+//     var anotherPerson = person; //anotherPerson = the value of person
+//     person = "Bryant"; //value of person changed
+
+//     console.log(anotherPerson); //Kobe
+//     console.log(person); //Bryant
+
+
+/**
+ * ?It is worth noting that even though we changed person to “Bryant,” the anotherPerson variable still retains the value that person had.
+ * ?Compare the primitive data saved-as-value demonstrated above with the save-as-reference for objects:
+ */
+
+    // var person = {name: "Kobe"};
+    // var anotherPerson = person;
+    // person.name = "Bryant";
+
+    // console.log(anotherPerson.name); //Bryant
+    // console.log(person.name); //Bryant
+
+    /**
+     * ?In this example, we copied the person object to anotherPerson, but because the value in person was stored as a reference and not an actual value, when we changed the 
+     * ?person.name property to “Bryant” the anotherPerson reflected the change because it never stored an actual copy of it’s own value of the person’s properties, it only had a reference to it.
+     */
+
+/**
+ ** Object Creation -----------------------------------------------------------------------------------------------------------
+ */
+
+ //? Object Literal
+ //? Object Constructor
+
+  /**
+   * ?--------Object Literals
+   */
+
+   /**
+    * ?The most common and, indeed, the easiest way to create objects is with the object literal described here:
+    */
+
+    //This is an empty object initialized using the object literal notation
+
+    // var myBooks = {};
+
+    //This is an object with 4 items, again using object literal
+    // var mango = {
+    //   color: "yellow",
+    //   shape: "round",
+    //   sweetness: 8,
+
+    //   howSweetAmI: function () {
+    //     console.log("Hmm Hmm Good");
+    //   }
+    // }
+    
+
+     /**
+   * ?----Object Constructor
+   */
+    
+   /**
+    * ?The second most common way to create objects is with Object constructor. 
+    * ?A constructor is a function used for initializing new objects, and you use the new keyword to call the constructor.
+    */
+
+    // var mango = new Object();
+    // mango.color = "yellow";
+    // mango.shape = "round";
+    // mango.sweetness = 8;
+
+    // mango.howSweetAmI = function () {
+    //   console.log("Hmm Hmm Good");
+    // }
+
+    /**
+     * ?While you can use some reserved word such as “for” as property names in your objects, it is wise to avoid this altogether.
+     * ?Objects can contain any other data type, including Numbers, Arrays, and even other Objects.Practical Patterns for Creating Objects
+     */
+ 
+/**
  ** Plugin structure -----------------------------------------------------------------------------------------------------------
  */
 
@@ -230,6 +409,7 @@
  * * Closures------------------------------------------------------------------------------------------------------------------------------------
  */
 
+//?A closure in JavaScript is like keeping a copy of all the local variables, just as they were when a function exited
 
 
 // function sayHello2(name) {
@@ -297,6 +477,4 @@
 
 // var myName = function () {
 //   console.log("Rich");
-// }
-
-//?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
+// }//?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
