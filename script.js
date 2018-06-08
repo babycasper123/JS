@@ -12,7 +12,7 @@
 //?Symbol
 
 //?----------Boolean
-/**
+/**   
  * ?Boolean
  * ?A boolean represents only one of two values: true, or false. Think of a boolean as an on/off or a yes/no switch.
  */
@@ -63,6 +63,8 @@
 /**
  ** Objects -----------------------------------------------------------------------------------------------------------
  */
+
+ 
 /**
  * ?An object is an unordered list of primitive data types (and sometimes reference data types) that is stored as a series of name-value pairs.
  * ?Each item in the list is called a property (functions are called methods).
@@ -227,8 +229,35 @@
  * *Closures -----------------------------------------------------------------------------------------------------------
  */
 
+//?A closure in JavaScript is like keeping a copy of all the local variables, just as they were when a function exited
+//??Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+
+// function sayHello2(name) {
+
+//   var text = 'Hello ' + name; //Local variable
+
+//   var say = function () {
+//     console.log(text);
+//   }
+//   return say;
+
+// }
+
+// var say2 = sayHello2('Bob');
+
+
+// say2(); //logs "Hello Bob"
+
 /**
- * ?Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+ * ?Here say2 is assigned a referance of  the anonymos function of console.log . So saHello2('bob') passes the name , makes of it some use in text. But only return the anonomous 
+ * ?function to sa2.
+ * ?So technically after function return name , text everything should have been destroyed. Since it only has access to the anynumous function it just returned , 
+ * ?not the global variables of the parent 
+ * ?function even though it makes use of it. But because of closure the values are not destroyed and the function holds onto it.
+ */
+
+/**
+ * *----------------------------
  */
 
 /**
@@ -352,6 +381,7 @@
  */
 
 // var car = { model: 'Ford', color: 'Red' }
+
 // function updateVehicle(model, color) {
 //   this.model = model;
 //   this.color = color;
@@ -388,7 +418,8 @@
  * ?This way whenever the function is invoked it will automatically use the context assigned to it.
  */
 
-// var car = { model: 'Ford', color: 'Red' }
+// var car = { model: 'Ford', color: 'Red' };
+
 // function updateVehicle(model, color) {
 //   this.model = model;
 //   this.color = color;
@@ -401,39 +432,6 @@
 /**
  * ?In the example above the function updateCar will always use the updateVehicle function bound to the car object. Using the same parameters as 
  * ?the updateVehicle function.
- */
-
-
-
-/**
- * * Closures------------------------------------------------------------------------------------------------------------------------------------
- */
-
-//?A closure in JavaScript is like keeping a copy of all the local variables, just as they were when a function exited
-
-
-// function sayHello2(name) {
-
-//   var text = 'Hello ' + name; //Local variable
-
-//   var say = function () {
-//     console.log(text);
-//   }
-//   return say;
-
-// }
-
-// var say2 = sayHello2('Bob');
-
-
-// say2(); //logs "Hello Bob"
-
-/**
- * ?Here say2 is assigned a referance of  the anonymos function of console.log . So saHello2('bob') passes the name , makes of it some use in text. But only return the anonomous 
- * ?function to sa2.
- * ?So technically after function return name , text everything should have been destroyed. Since it only has access to the anynumous function it just returned , 
- * ?not the global variables of the parent 
- * ?function even though it makes use of it. But because of closure the values are not destroyed and the function holds onto it.
  */
 
 
@@ -450,14 +448,24 @@
  */
 
 
+
+
 //?Both the variable and the function are named myName
 
 // var myName;
+
 // function myName () {
-// console.log ("Rich");
+// console.log (myName);
 // }
 
 //?The function declaration overrides the variable name
+
+
+// var myName;
+
+// function myName () {
+// console.log (myName);
+// }
 
 // console.log(typeof myName); //function
 
@@ -477,4 +485,6 @@
 
 // var myName = function () {
 //   console.log("Rich");
-// }//?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
+// }
+
+//?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
