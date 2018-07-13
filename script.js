@@ -488,3 +488,107 @@
 // }
 
 //?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
+
+// Higher order functions are same as call back functions
+
+
+
+// *Object.entries() method
+
+/**
+ * ?The Object.entries() method returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided by a for...in loop 
+ * ?(the difference being that a for-in loop enumerates properties in the prototype chain as well).
+ */
+
+  // let meals = {  
+  //   mealA: 'Breakfast',
+  //   mealB: 'Lunch',
+  //   mealC: 'Dinner',
+  //   tree : {
+  //     parent:true,
+  //     child1 : false
+  //   }
+  // };
+  // for (let [key, value] of Object.entries(meals)) {  
+  //   console.log(key + ':' + value);
+  // }
+
+
+    //"mealA:Breakfast"
+    //"mealB:Lunch"
+    //"mealC:Dinner"
+    //"tree:[object Object]"
+
+
+    // * Factory functions
+
+
+    //* Method chaining example via prototype.
+
+    // // define the class
+    // var Kitten = function () {
+    //   this.name = 'Garfield';
+    //   this.color = 'brown';
+    //   this.gender = 'male';
+    // };
+
+    // Kitten.prototype.setName = function (name) {
+    //   this.name = name;
+    //   return this;
+    // };
+
+    // Kitten.prototype.setColor = function (color) {
+    //   this.color = color;
+    //   return this;
+    // };
+
+    // Kitten.prototype.setGender = function (gender) {
+    //   this.gender = gender;
+    //   return this;
+    // };
+
+    // Kitten.prototype.save = function () {
+    //   console.log(
+    //     'saving ' + this.name + ', the ' +
+    //     this.color + ' ' + this.gender + ' kitten...'
+    //   );
+
+    //   // save to database here...
+
+    //   return this;
+    // };
+
+
+    //* Method chaining example 2
+
+    // var test = function () {
+
+    //   var settings = {
+    //     name : ''
+    //   }
+
+    //   var speak = function(){
+    //     console.log("Speaking");
+    //     return this;
+    //   };
+
+    //   var running = function(){
+    //     console.log("Running");
+    //     return this;
+    //   };
+
+    //   var setname = function(name){
+    //     settings.name = name;
+    //   };
+  
+    //   return {
+    //     speak : speak,
+    //     running : running,
+    //     setname : setname,
+    //     settings : settings
+    //   };
+
+    // };
+  
+    // var x = new test();
+    // var y = new test();
