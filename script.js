@@ -592,3 +592,48 @@
   
     // var x = new test();
     // var y = new test();
+
+
+    //* Understanding ARROW FUNCTIONS scope of this.
+
+    // As you’ll see, the function will log to the screen every second. But the result isn’t what we expect. NaN (Not a Number) is being logged. 
+    // So, what went wrong? First thing is first, stop they annoying interval by running:
+
+    // function Counter() {
+    //   this.num = 0;
+    //   this.timer = setInterval(function add() {
+    //     this.num++;
+    //     console.log(this.num);
+    //   }, 2000);
+    // }
+
+    // var a = new Counter();
+
+//? Let’s back up. Our setInterval function isn’t being called on a declared object. It also isn’t being called with the new keyword (only the Counter() function is). 
+//? And lastly, we’re not using call, bind, or apply. setInterval is just a normal function. In fact, the value of this in setIntervalis being bound to the global object! 
+// Lets test this theory by logging the value of this:
+
+// function Counter() {
+//   this.num = 0;
+// this.timer = setInterval(function add() {
+//     console.log(this);
+//   }, 1000);
+// }
+// var b = new Counter();
+
+//? As you’ll see, the window object is logged out every second.
+//? Back to our original function. It was logging NaN because this.num was referring to the num property on the window object ( window.num which doesn’t exist), 
+//? and not the b object ( b.num ) we had just created.
+//? So how do we fix this? With an arrow function! We need a function that doesn’t bind this. With an arrow function, the this binding keeps its original binding from the context.
+//? Lets take our original Counter function and replace our setInterval with an arrow function.
+
+// function Counter() {
+//   this.num = 0;
+//   this.timer = setInterval(() => {
+//     this.num++;
+//     console.log(this.num);
+//   }, 1000);
+// }
+
+//? As you’ll see, the console begins logging increasing numbers — it works! The original this binding created by the Counter constructor function is preserved. 
+//? Inside the setInterval function, this is still bound to our newly created b object!
