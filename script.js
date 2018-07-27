@@ -611,7 +611,8 @@
 
 //? Let’s back up. Our setInterval function isn’t being called on a declared object. It also isn’t being called with the new keyword (only the Counter() function is). 
 //? And lastly, we’re not using call, bind, or apply. setInterval is just a normal function. In fact, the value of this in setIntervalis being bound to the global object! 
-// Lets test this theory by logging the value of this:
+//? Lets test this theory by logging the value of this:
+
 
 // function Counter() {
 //   this.num = 0;
