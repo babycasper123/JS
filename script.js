@@ -98,14 +98,14 @@
   * ?it is not stored directly on the variable, as a value, as the primitive data types are. For example:
   */
   
-//     The primitive data type String is stored as a value
+    The primitive data type String is stored as a value
 
-//     var person = "Kobe";  
-//     var anotherPerson = person; //anotherPerson = the value of person
-//     person = "Bryant"; //value of person changed
+    var person = "Kobe";  
+    var anotherPerson = person; //anotherPerson = the value of person
+    person = "Bryant"; //value of person changed
 
-//     console.log(anotherPerson); //Kobe
-//     console.log(person); //Bryant
+    console.log(anotherPerson); //Kobe
+    console.log(person); //Bryant
 
 
 /**
@@ -113,12 +113,12 @@
  * ?Compare the primitive data saved-as-value demonstrated above with the save-as-reference for objects:
  */
 
-    // var person = {name: "Kobe"};
-    // var anotherPerson = person;
-    // person.name = "Bryant";
+      var person = {name: "Kobe"};
+      var anotherPerson = person;
+      person.name = "Bryant";
 
-    // console.log(anotherPerson.name); //Bryant
-    // console.log(person.name); //Bryant
+      console.log(anotherPerson.name); //Bryant
+      console.log(person.name); //Bryant
 
     /**
      * ?In this example, we copied the person object to anotherPerson, but because the value in person was stored as a reference and not an actual value, when we changed the 
@@ -140,20 +140,20 @@
     * ?The most common and, indeed, the easiest way to create objects is with the object literal described here:
     */
 
-    //This is an empty object initialized using the object literal notation
+      This is an empty object initialized using the object literal notation
 
-    // var myBooks = {};
+      var myBooks = {};
 
-    //This is an object with 4 items, again using object literal
-    // var mango = {
-    //   color: "yellow",
-    //   shape: "round",
-    //   sweetness: 8,
+      This is an object with 4 items, again using object literal
+      var mango = {
+         color: "yellow",
+         shape: "round",
+         sweetness: 8,
 
-    //   howSweetAmI: function () {
-    //     console.log("Hmm Hmm Good");
-    //   }
-    // }
+         howSweetAmI: function () {
+         console.log("Hmm Hmm Good");
+         }
+      }
     
 
      /**
@@ -165,14 +165,14 @@
     * ?A constructor is a function used for initializing new objects, and you use the new keyword to call the constructor.
     */
 
-    // var mango = new Object();
-    // mango.color = "yellow";
-    // mango.shape = "round";
-    // mango.sweetness = 8;
+      var mango = new Object();
+      mango.color = "yellow";
+      mango.shape = "round";
+      mango.sweetness = 8;
 
-    // mango.howSweetAmI = function () {
-    //   console.log("Hmm Hmm Good");
-    // }
+      mango.howSweetAmI = function () {
+         console.log("Hmm Hmm Good");
+      }
 
     /**
      * ?While you can use some reserved word such as “for” as property names in your objects, it is wise to avoid this altogether.
@@ -187,42 +187,42 @@
  * ?Self executing
  */
 
-// (function shouter() {
-//   var role = "Developer"; //Private Declarations
-//   this.publicrole = "Someeeee"; //Public access Variables
-//   this.shout = function () { //Public methods
-//     alert("Hello !!!" + role);
-//   }
-//   return this;
-// })();
+   (function shouter() {
+     var role = "Developer"; //Private Declarations
+     this.publicrole = "Someeeee"; //Public access Variables
+     this.shout = function () { //Public methods
+       alert("Hello !!!" + role);
+     }
+     return this;
+   })();
 
 /**
  * ?Constructor initialised , initialise via var new shouter = shouter() , then access 
  */
 
 
-// function shouter() {
-//   var role = "Developer"; //Private Declarations
-//   this.publicrole = "Someeeee"; //Public access Variables
-//   this.shout = function () { //Public methods
-//     alert("Hello !!!" + role);
-//   }
-//   return this;
-// }
+   function shouter() {
+   var role = "Developer"; //Private Declarations
+   this.publicrole = "Someeeee"; //Public access Variables
+   this.shout = function () { //Public methods
+      alert("Hello !!!" + role);
+   }
+   return this;
+   }
 
 /**
  * *Scopes examples -----------------------------------------------------------------------------------------------------------
  */
 
-// var global = "Global scope";
-// (function () {
-//     this.public = "vishnu";
-//     function shout() {
-//         var private = "secret";
-//         console.log("Private is : " + private + " and Public is : " + this.public + " and global is" + global);
-//     }
-//     shout();
-// })();
+   var global = "Global scope";
+   (function () {
+      this.public = "vishnu";
+      function shout() {
+         var private = "secret";
+         console.log("Private is : " + private + " and Public is : " + this.public + " and global is" + global);
+      }
+      shout();
+   })();
 
 
 /**
@@ -232,21 +232,21 @@
 //?A closure in JavaScript is like keeping a copy of all the local variables, just as they were when a function exited
 //??Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
 
-// function sayHello2(name) {
+function sayHello2(name) {
 
-//   var text = 'Hello ' + name; //Local variable
+  var text = 'Hello ' + name; //Local variable
 
-//   var say = function () {
-//     console.log(text);
-//   }
-//   return say;
+  var say = function () {
+    console.log(text);
+  }
+  return say;
 
-// }
+}
 
-// var say2 = sayHello2('Bob');
+var say2 = sayHello2('Bob');
 
 
-// say2(); //logs "Hello Bob"
+say2(); //logs "Hello Bob"
 
 /**
  * ?Here say2 is assigned a referance of  the anonymos function of console.log . So saHello2('bob') passes the name , makes of it some use in text. But only return the anonomous 
@@ -268,18 +268,18 @@
 
 
 
-//    function person(name) {
-//        return {
-//            greet: function () {
-//                console.log('hello from ' + name)
-//            }
-//        }
-//    }
+   function person(name) {
+       return {
+           greet: function () {
+               console.log('hello from ' + name)
+           }
+       }
+   }
 
-//    let alex = person('alex');
-//    alex.greet(); //hello from alex
-//    console.log(alex.name); //undefined
-//    console.log(name); / will throw ReferenceError
+   let alex = person('alex');
+   alex.greet(); //hello from alex
+   console.log(alex.name); //undefined
+   console.log(name); / will throw ReferenceError
 
 
 
@@ -300,26 +300,26 @@
  * 
  */
 
-//   function Person(firstName, lastName, age) {
+  function Person(firstName, lastName, age) {
 
-//     var privateDef = 'this is a private member';
+    var privateDef = 'this is a private member';
 
-//     return {
-//       getName: function() {
-//         console.log('My name is ' + firstName + ' ' + lastName);
-//       },
-//       getAge: function() {
-//         console.log('I am ' + age + ' years old')
-//       }
-//     }
-//   }
+    return {
+      getName: function() {
+        console.log('My name is ' + firstName + ' ' + lastName);
+      },
+      getAge: function() {
+        console.log('I am ' + age + ' years old')
+      }
+    }
+  }
 
-//   let person = new Person('Alex', 'Kondov', 22);
-//   person.getName();
-//   person.getAge();
+  let person = new Person('Alex', 'Kondov', 22);
+  person.getName();
+  person.getAge();
 
 
-//   console.log(person.privateDef); //Undefined can't access
+  console.log(person.privateDef); //Undefined can't access
 
 
 /**
@@ -331,41 +331,41 @@
  */
 
 
-//    function Order(items) {
+   function Order(items) {
 
-//        const total = items => {
-//            return items.reduce((acc, curr) => {
-//                return acc + curr.price
-//            }, 0)
-//        }
+       const total = items => {
+           return items.reduce((acc, curr) => {
+               return acc + curr.price
+           }, 0)
+       }
 
-//reduce itterates through the object , acc is accumilator or total , curr is current value. Basically we iterate through each
-//Add price (curr.price) and stack it to acc.
+reduce itterates through the object , acc is accumilator or total , curr is current value. Basically we iterate through each
+Add price (curr.price) and stack it to acc.
 
-//        const addTaxToPrice = price => price + (price * 0.2)
+       const addTaxToPrice = price => price + (price * 0.2)
 
-//        return {
-//            calculateTotal: () => {
-//                return addTaxToPrice(total(items)).toFixed(2)
-//            }
-//        }
+       return {
+           calculateTotal: () => {
+               return addTaxToPrice(total(items)).toFixed(2)
+           }
+       }
 
-//    }
+   }
 
-//    const items = [{
-//            name: 'Toy',
-//            price: 14.99
-//        },
-//        {
-//            name: 'Candy',
-//            price: 7.99
-//        }
-//    ]
+   const items = [{
+           name: 'Toy',
+           price: 14.99
+       },
+       {
+           name: 'Candy',
+           price: 7.99
+       }
+   ]
 
-//    const order = Order(items)
-//    console.log(order.total) //undefined
-//    console.log(order.addTaxToPrice) //undefined
-//    console.log(order.calculateTotal()) //27.58
+   const order = Order(items)
+   console.log(order.total) //undefined
+   console.log(order.addTaxToPrice) //undefined
+   console.log(order.calculateTotal()) //27.58
 
 
 /**
@@ -380,12 +380,12 @@
  * ?Imagine the car has been replaced with a black Honda, how would one update the car object using updateVehicle (without modifying it)? 
  */
 
-// var car = { model: 'Ford', color: 'Red' }
+var car = { model: 'Ford', color: 'Red' }
 
-// function updateVehicle(model, color) {
-//   this.model = model;
-//   this.color = color;
-// }
+function updateVehicle(model, color) {
+  this.model = model;
+  this.color = color;
+}
 
 
 /**
@@ -393,12 +393,12 @@
  */
 
 //?Call
-// updateVehicle.call(car, 'Honda', 'Black');
+updateVehicle.call(car, 'Honda', 'Black');
 
 //?Apply
-// updateVehicle.apply(car, ['Honda', 'Black'])
+updateVehicle.apply(car, ['Honda', 'Black'])
 
-// console.log(car) //{ model: 'Honda', color: 'Black' }
+console.log(car) //{ model: 'Honda', color: 'Black' }
 
 
 /**
@@ -418,16 +418,16 @@
  * ?This way whenever the function is invoked it will automatically use the context assigned to it.
  */
 
-// var car = { model: 'Ford', color: 'Red' };
+var car = { model: 'Ford', color: 'Red' };
 
-// function updateVehicle(model, color) {
-//   this.model = model;
-//   this.color = color;
-// }
+function updateVehicle(model, color) {
+  this.model = model;
+  this.color = color;
+}
 
-// var updateCar = updateVehicle.bind(car);
-// updateCar('Honda', 'Black')
-// console.log(car) //{ model: 'Honda', color: 'Black' }
+var updateCar = updateVehicle.bind(car);
+updateCar('Honda', 'Black')
+console.log(car) //{ model: 'Honda', color: 'Black' }
 
 /**
  * ?In the example above the function updateCar will always use the updateVehicle function bound to the car object. Using the same parameters as 
@@ -452,44 +452,44 @@
 
 //?Both the variable and the function are named myName
 
-// var myName;
+var myName;
 
-// function myName () {
-// console.log (myName);
-// }
+function myName () {
+console.log (myName);
+}
 
 //?The function declaration overrides the variable name
 
 
-// var myName;
+var myName;
 
-// function myName () {
-// console.log (myName);
-// }
+function myName () {
+console.log (myName);
+}
 
-// console.log(typeof myName); //function
+console.log(typeof myName); //function
 
 
 //?But in this example, the variable assignment overrides the function declaration
 
-// var myName = "Richard"; //This is the variable assignment (initialization) that overrides the function declaration.
+var myName = "Richard"; //This is the variable assignment (initialization) that overrides the function declaration.
 
-// function myName() {
-//   console.log("Rich");
-// }
+function myName() {
+  console.log("Rich");
+}
 
-// console.log(typeof myName); //String
+console.log(typeof myName); //String
 
 
 //?It is important to note that function expressions, such as the example below, are not hoisted.
 
-// var myName = function () {
-//   console.log("Rich");
-// }
+var myName = function () {
+  console.log("Rich");
+}
 
 //?In strict mode, an error will occur if you assign a variable a value without first declaring the variable. Always declare your variables.
 
-// Higher order functions are same as call back functions
+//? Higher order functions are same as call back functions
 
 
 
@@ -500,24 +500,24 @@
  * ?(the difference being that a for-in loop enumerates properties in the prototype chain as well).
  */
 
-  // let meals = {  
-  //   mealA: 'Breakfast',
-  //   mealB: 'Lunch',
-  //   mealC: 'Dinner',
-  //   tree : {
-  //     parent:true,
-  //     child1 : false
-  //   }
-  // };
-  // for (let [key, value] of Object.entries(meals)) {  
-  //   console.log(key + ':' + value);
-  // }
+  let meals = {  
+    mealA: 'Breakfast',
+    mealB: 'Lunch',
+    mealC: 'Dinner',
+    tree : {
+      parent:true,
+      child1 : false
+    }
+  };
+  for (let [key, value] of Object.entries(meals)) {  
+    console.log(key + ':' + value);
+  }
 
 
-    //"mealA:Breakfast"
-    //"mealB:Lunch"
-    //"mealC:Dinner"
-    //"tree:[object Object]"
+    "mealA:Breakfast"
+    "mealB:Lunch"
+    "mealC:Dinner"
+    "tree:[object Object]"
 
 
     // * Factory functions
@@ -525,73 +525,73 @@
 
     //* Method chaining example via prototype.
 
-    // // define the class
-    // var Kitten = function () {
-    //   this.name = 'Garfield';
-    //   this.color = 'brown';
-    //   this.gender = 'male';
-    // };
+    // define the class
+    var Kitten = function () {
+      this.name = 'Garfield';
+      this.color = 'brown';
+      this.gender = 'male';
+    };
 
-    // Kitten.prototype.setName = function (name) {
-    //   this.name = name;
-    //   return this;
-    // };
+    Kitten.prototype.setName = function (name) {
+      this.name = name;
+      return this;
+    };
 
-    // Kitten.prototype.setColor = function (color) {
-    //   this.color = color;
-    //   return this;
-    // };
+    Kitten.prototype.setColor = function (color) {
+      this.color = color;
+      return this;
+    };
 
-    // Kitten.prototype.setGender = function (gender) {
-    //   this.gender = gender;
-    //   return this;
-    // };
+    Kitten.prototype.setGender = function (gender) {
+      this.gender = gender;
+      return this;
+    };
 
-    // Kitten.prototype.save = function () {
-    //   console.log(
-    //     'saving ' + this.name + ', the ' +
-    //     this.color + ' ' + this.gender + ' kitten...'
-    //   );
+    Kitten.prototype.save = function () {
+      console.log(
+        'saving ' + this.name + ', the ' +
+        this.color + ' ' + this.gender + ' kitten...'
+      );
 
-    //   // save to database here...
+      // save to database here...
 
-    //   return this;
-    // };
+      return this;
+    };
 
 
     //* Method chaining example 2
 
-    // var test = function () {
+    var test = function () {
 
-    //   var settings = {
-    //     name : ''
-    //   }
+      var settings = {
+        name : ''
+      }
 
-    //   var speak = function(){
-    //     console.log("Speaking");
-    //     return this;
-    //   };
+      var speak = function(){
+        console.log("Speaking");
+        return this;
+      };
 
-    //   var running = function(){
-    //     console.log("Running");
-    //     return this;
-    //   };
+      var running = function(){
+        console.log("Running");
+        return this;
+      };
 
-    //   var setname = function(name){
-    //     settings.name = name;
-    //   };
+      var setname = function(name){
+        settings.name = name;
+      };
   
-    //   return {
-    //     speak : speak,
-    //     running : running,
-    //     setname : setname,
-    //     settings : settings
-    //   };
+      return {
+        speak : speak,
+        running : running,
+        setname : setname,
+        settings : settings
+      };
 
-    // };
+    };
   
-    // var x = new test();
-    // var y = new test();
+    var x = new test();
+    var y = new test();
 
 
     //* Understanding ARROW FUNCTIONS scope of this.
@@ -599,28 +599,28 @@
     // As you’ll see, the function will log to the screen every second. But the result isn’t what we expect. NaN (Not a Number) is being logged. 
     // So, what went wrong? First thing is first, stop they annoying interval by running:
 
-    // function Counter() {
-    //   this.num = 0;
-    //   this.timer = setInterval(function add() {
-    //     this.num++;
-    //     console.log(this.num);
-    //   }, 2000);
-    // }
+    function Counter() {
+      this.num = 0;
+      this.timer = setInterval(function add() {
+        this.num++;
+        console.log(this.num);
+      }, 2000);
+    }
 
-    // var a = new Counter();
+    var a = new Counter();
 
 //? Let’s back up. Our setInterval function isn’t being called on a declared object. It also isn’t being called with the new keyword (only the Counter() function is). 
 //? And lastly, we’re not using call, bind, or apply. setInterval is just a normal function. In fact, the value of this in setIntervalis being bound to the global object! 
 //? Lets test this theory by logging the value of this:
 
 
-// function Counter() {
-//   this.num = 0;
-// this.timer = setInterval(function add() {
-//     console.log(this);
-//   }, 1000);
-// }
-// var b = new Counter();
+function Counter() {
+  this.num = 0;
+this.timer = setInterval(function add() {
+    console.log(this);
+  }, 1000);
+}
+var b = new Counter();
 
 //? As you’ll see, the window object is logged out every second.
 //? Back to our original function. It was logging NaN because this.num was referring to the num property on the window object ( window.num which doesn’t exist), 
@@ -628,13 +628,78 @@
 //? So how do we fix this? With an arrow function! We need a function that doesn’t bind this. With an arrow function, the this binding keeps its original binding from the context.
 //? Lets take our original Counter function and replace our setInterval with an arrow function.
 
-// function Counter() {
-//   this.num = 0;
-//   this.timer = setInterval(() => {
-//     this.num++;
-//     console.log(this.num);
-//   }, 1000);
-// }
+function Counter() {
+  this.num = 0;
+  this.timer = setInterval(() => {
+    this.num++;
+    console.log(this.num);
+  }, 1000);
+}
 
 //? As you’ll see, the console begins logging increasing numbers — it works! The original this binding created by the Counter constructor function is preserved. 
 //? Inside the setInterval function, this is still bound to our newly created b object!
+
+
+//* Real time example of prototyping
+
+//? Adding a custom method to a built in data type like String
+
+String.prototype.removeSecond = function(){
+   let cleanedString = this.substring(1,2);
+   return cleanedString;
+ }
+ console.log("vishnu".removeSecond()) //Outputs i
+
+
+
+ //* - Promise 
+
+ //?  I promise to do this whenever that is true. If it isn't true, then I won't.
+ //?  This is a simple illustration of JavaScript Promises. Sounds like an IF statement? We’ll soon see a huge difference.
+ //?  A promise is used to handle the asynchronous result of an operation. JavaScript is designed to not wait for an asynchrnous block of code to completely execute before other synchronous parts of the code can run. For instance, when making API requests to servers, we have no idea if these servers are offline or online, or how long it takes to process the server request.
+ //?  With Promises, we can defer execution of a code block until an async request is completed. This way, other operations can keep running without interruption.
+ //?  Promises have three states:
+ //?  Pending: This is the initial state of the Promise before an operation begins
+ //?  Fulfilled: This means the specified operation was completed
+ //?  Rejected: The operation did not complete; an error value is usually thrown
+ //?  Creating a Promise
+ //?  The Promise object is created using the new keyword and contains the promise; this is an executor function which has a resolve and a reject callback. As the names imply, each of these callbacks returns a value with the reject callback returning an error object.
+
+   const weather = true
+   const dates = new Promise(function(resolve,reject){
+   if (weather == true ) {
+      setTimeout(function () {
+         resolve('Yay will go');
+      }, 3000);
+   }
+   else {
+      reject(new Error("Nope !"))
+   }
+   });
+
+   dates.then(function(done){
+      console.log(done)
+   }).catch(function(error){
+      console.log(error.message)
+   })
+
+
+
+   //* Simple callback function example 
+
+    var names = [];
+
+    function inputname(name,callback){
+      if (name != ''){
+        names.push(name);
+        callback(names);
+      }
+    }
+
+    function logname(namearray){
+      console.log(namearray);
+    }
+    
+    inputname("Vishnu",logname);
+
+    
