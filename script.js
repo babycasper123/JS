@@ -552,9 +552,7 @@ var myName = function () {
         'saving ' + this.name + ', the ' +
         this.color + ' ' + this.gender + ' kitten...'
       );
-
       // save to database here...
-
       return this;
     };
 
@@ -616,10 +614,10 @@ var myName = function () {
 
 function Counter() {
   this.num = 0;
-this.timer = setInterval(function add() {
-    console.log(this);
-  }, 1000);
-}
+  this.timer = setInterval(function add() {
+      console.log(this);
+    }, 1000);
+  }
 var b = new Counter();
 
 //? As you’ll see, the window object is logged out every second.
@@ -701,5 +699,35 @@ String.prototype.removeSecond = function(){
     }
     
     inputname("Vishnu",logname);
+
+
+    //* Async function
+    https://javascript.info/async-await
+    //? The word “async” before a function means one simple thing: a function always returns a promise. 
+    //? If the code has return <non-promise> in it, then JavaScript automatically wraps it into a resolved promise with that value.
+
+
+    async function runner() {
+      var datafetch = new Promise((resolve, reject) => {
+        setTimeout(function() {
+          resolve("data");
+        }, 3000);
+      });
+    
+      var datafetch2 = new Promise((resolve, reject) => {
+        setTimeout(function() {
+          resolve("data2");
+        }, 5000);
+      });
+    
+      let result = await datafetch;
+      let result2 = await datafetch2;
+      console.log(result);
+      console.log(result2);
+      console.log("asd");
+    }
+
+
+
 
     
