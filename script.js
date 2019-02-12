@@ -492,6 +492,7 @@ var myName = function () {
 //? Higher order functions are same as call back functions
 
 
+//* -----------------------------------------------------------------------------------------------------------------
 
 // *Object.entries() method
 
@@ -522,6 +523,7 @@ var myName = function () {
 
     // * Factory functions
 
+    //* -----------------------------------------------------------------------------------------------------------------
 
     //* Method chaining example via prototype.
 
@@ -592,6 +594,8 @@ var myName = function () {
     var y = new test();
 
 
+    //* -----------------------------------------------------------------------------------------------------------------
+
     //* Understanding ARROW FUNCTIONS scope of this.
 
     // As you’ll see, the function will log to the screen every second. But the result isn’t what we expect. NaN (Not a Number) is being logged. 
@@ -637,6 +641,7 @@ function Counter() {
 //? As you’ll see, the console begins logging increasing numbers — it works! The original this binding created by the Counter constructor function is preserved. 
 //? Inside the setInterval function, this is still bound to our newly created b object!
 
+//* -----------------------------------------------------------------------------------------------------------------
 
 //* Real time example of prototyping
 
@@ -648,7 +653,7 @@ String.prototype.removeSecond = function(){
  }
  console.log("vishnu".removeSecond()) //Outputs i
 
-
+//* -----------------------------------------------------------------------------------------------------------------
 
  //* - Promise 
 
@@ -682,8 +687,59 @@ String.prototype.removeSecond = function(){
    })
 
 
+//?What’s wrong with using just callbacks?
 
-   //* Simple callback function example 
+//?Nothing, but there are times (specially on Node.js apps) when you are performing multiple operations and you need to wait for the result of one in order to move to the next. In these cases you enter what’s called the “callback hell”, when you have several callbacks inside of other callbacks.
+//?For example, you need to do the following: read a MongoDB collection, call an external API, call some other API, save some data in MongoDB. In each step you need the result of the previous step. Using callbacks can make your code very messy.
+//?This is an example when using JavaScript promises and chaining them together would make things easier
+
+//?How do you chain JavaScript promises?
+//?The following example shows how you can chain JavaScript native promises using the then keyword.
+//?Imagine you have three methods that do asynchronous operations (example: Ajax calls, calls to API, Mongo operations, writing to disk, etc). You want to call “secondMethod” when “firstMethod” completes, and when “secondMethod” completes you then want to call “thirdMethod”.
+//?See how easy this becomes with promises:
+
+
+
+var firstMethod = function() {
+  var promise = new Promise(function(resolve, reject){
+     setTimeout(function() {
+        console.log('first method completed');
+        resolve({data: '123'});
+     }, 2000);
+  });
+  return promise;
+};
+
+
+var secondMethod = function(someStuff) {
+  var promise = new Promise(function(resolve, reject){
+     setTimeout(function() {
+        console.log('second method completed');
+        resolve({newData: someStuff.data + ' some more data'});
+     }, 2000);
+  });
+  return promise;
+};
+
+var thirdMethod = function(someStuff) {
+  var promise = new Promise(function(resolve, reject){
+     setTimeout(function() {
+        console.log('third method completed');
+        resolve({result: someStuff.newData});
+     }, 3000);
+  });
+  return promise;
+};
+
+firstMethod()
+  .then(secondMethod)
+  .then(thirdMethod);
+
+
+//* -----------------------------------------------------------------------------------------------------------------
+
+
+ //* Simple callback function example 
 
     var names = [];
 
@@ -710,7 +766,7 @@ String.prototype.removeSecond = function(){
     async function runner() {
       var datafetch = new Promise((resolve, reject) => {
         setTimeout(function() {
-          resolve("data");
+          resolve("data1");
         }, 3000);
       });
     
@@ -724,9 +780,12 @@ String.prototype.removeSecond = function(){
       let result2 = await datafetch2;
       console.log(result);
       console.log(result2);
-      console.log("asd");
+      console.log("ALL DATA FETCHED");
     }
 
+    runner.then(function(){
+      console.log("All done")
+    })
 
 
 
