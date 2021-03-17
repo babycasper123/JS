@@ -4,36 +4,36 @@
 
 //? In JS, there are six primitive data types:
 
-//?Boolean
-//?Number
-//?String
-//?Null
-//?Undefined
-//?Symbol
+?Boolean
+?Number
+?String
+?Null
+?Undefined
+?Symbol
 
 //?----------Boolean
 /**   
  * ?Boolean
  * ?A boolean represents only one of two values: true, or false. Think of a boolean as an on/off or a yes/no switch.
  */
-// var boo1 = true;
-// var boo2 = false;
+var boo1 = true;
+var boo2 = false;
 
 //?----------Number
 /**
  * ?There is only one type of Number in JavaScript. Numbers can be written with or without a decimal point. A number can also be +Infinity, -Infinity, and NaN (not a number).
  */
 
-// var num1 = 32;
-// var num2 = +Infinity;
+var num1 = 32;
+var num2 = +Infinity;
 
 
 //?----------String
 /**
  * ?Strings are used for storing text. Strings must be inside of either double or single quotes. In JS, Strings are immutable (they cannot be changed).
  */
-// var str1 = 'hello, it is me';
-// var str2 = "hello, it's me";
+var str1 = 'hello, it is me';
+var str2 = "hello, it's me";
 
 
 //?----------Null
@@ -41,15 +41,15 @@
  * ?Null has one value: null. It is explicitly nothing.
  */
 
-// var nothing = null;
+var nothing = null;
 
 //?----------Undefined
 /**
  * ?A variable that has no value is undefined.
  */
 
-// var testVar;
-// console.log(testVar); //undefined
+var testVar;
+console.log(testVar); //undefined
 
 //?----------Symbol
 /**
@@ -57,7 +57,7 @@
  * ?that is the extent that this article will cover Symbols.
  */
 
-// const mySymbol = Symbol('mySymbol');
+const mySymbol = Symbol('mySymbol');
 
 
 /**
@@ -70,7 +70,7 @@
  * ?Each item in the list is called a property (functions are called methods).
  */
 
-    // var myFirstObject = {firstName: "Richard", favoriteAuthor: "Conrad"};
+    var myFirstObject = {firstName: "Richard", favoriteAuthor: "Conrad"};
 
 /**
  * ?Think of an object as a list that contains items, and each item (a property or a method) in the list is stored by a name-value pair. 
@@ -78,10 +78,10 @@
  * ?Property names can be a string or a number, but if the property name is a number, it has to be accessed with the bracket notation.0 
  * ?More on bracket notation later. Here is another example of objects with numbers as the property name:*/
 
-    // var ageGroup = {30: "Children", 100:"Very Old"};
-    // console.log(ageGroup.30) //This will throw an error
+    var ageGroup = {30: "Children", 100:"Very Old"};
+    console.log(ageGroup.30) //This will throw an error
     //This is how you will access the value of the property 30, to get value "Children"
-    // console.log(ageGroup["30"]); //Children
+    console.log(ageGroup["30"]); //Children
 
     //It is best to avoid using numbers as property names.
 
@@ -98,7 +98,7 @@
   * ?it is not stored directly on the variable, as a value, as the primitive data types are. For example:
   */
   
- The primitive data type String is stored as a value
+ //  The primitive data type String is stored as a value
 
  var person = "Kobe";  
  var anotherPerson = person; //anotherPerson = the value of person
@@ -106,7 +106,6 @@
 
  console.log(anotherPerson); //Kobe
  console.log(person); //Bryant
-
 
 /**
 * ?It is worth noting that even though we changed person to “Bryant,” the anotherPerson variable still retains the value that person had.
@@ -140,11 +139,11 @@
  * ?The most common and, indeed, the easiest way to create objects is with the object literal described here:
  */
 
-   This is an empty object initialized using the object literal notation
+  //  This is an empty object initialized using the object literal notation
 
    var myBooks = {};
 
-   This is an object with 4 items, again using object literal
+  //  This is an object with 4 items, again using object literal
    var mango = {
       color: "yellow",
       shape: "round",
@@ -202,14 +201,14 @@
 
 
 function shouter() {
-var role = "Developer"; //Private Declarations
-this.publicrole = "Someeeee"; //Public access Variables
-this.shout = function () { //Public methods
-   alert("Hello !!!" + role);
-}
-return this;
-}
-
+  var role = "Developer"; //Private Declarations
+  this.publicrole = "Someeeee"; //Public access Variables
+  this.shout = function () { //Public methods
+     alert("Hello !!!" + role);
+  }
+  return this;
+  }
+  var shouter1 = new  shouter() ;
 /**
 * *Scopes examples -----------------------------------------------------------------------------------------------------------
 */
@@ -339,8 +338,8 @@ function Order(items) {
         }, 0)
     }
 
-reduce itterates through the object , acc is accumilator or total , curr is current value. Basically we iterate through each
-Add price (curr.price) and stack it to acc.
+// reduce itterates through the object , acc is accumilator or total , curr is current value. Basically we iterate through each
+// Add price (curr.price) and stack it to acc.
 
     const addTaxToPrice = price => price + (price * 0.2)
 
