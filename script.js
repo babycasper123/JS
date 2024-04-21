@@ -691,7 +691,7 @@ dates.then(function(done){
      names.push(name);
      callback(names);
    }
- }
+ } 
 
  function logname(namearray){
    console.log(namearray);
